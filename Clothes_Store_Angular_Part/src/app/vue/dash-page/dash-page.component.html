@@ -1,0 +1,45 @@
+
+<br>
+<br>
+<div class="dashboard-container">
+    <div class="dashboard-item">
+      <div class="dashboard-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="dashboard-info">
+        <h2>{{ usercount}}</h2>
+        <p> Customers</p>
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <div class="dashboard-icon">
+        <i class="fas fa-truck"></i>
+      </div>
+      <div class="dashboard-info">
+        <h2>{{ deliverycount }}</h2>
+        <p>Delivery Agents </p>
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <div class="dashboard-icon">
+        <i class="fas fa-box"></i>
+      </div>
+      <div class="dashboard-info">
+        <h2>{{productsCount }}</h2>
+        <p>Products </p>
+      </div>
+    </div>
+  </div>
+  
+ <br>
+ <br>
+ <br> 
+ <div class="charts-container">
+    <div class="chart">
+      <canvas #ordersPerDayChart width="400" height="300"></canvas>
+    </div>
+    <div class="chart">
+      <canvas #columnChart width="400" height="300"></canvas>
+    </div>
+  </div>
+  

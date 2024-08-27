@@ -1,0 +1,106 @@
+<!-- Product Detail -->
+<section class="sec-product-detail bg0 p-t-65 p-b-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-7 p-b-30">
+        <div class="p-l-25 p-r-30 p-lr-0-lg">
+          <div class="wrap-slick3 flex-sb flex-w">
+            <div class="wrap-slick3-dots"></div>
+            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+            <div class="slick3 gallery-lb">
+              <div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+                <div class="wrap-pic-w pos-relative">
+                  <img [src]="bigImageSrc" alt="IMG-PRODUCT" width="200" height="650" style="margin-top: 20px;">
+                  <div class="small-images" *ngIf="product?.image_name">
+                    <img *ngFor="let imageName of product.image_name; let i = index" class="small-image" [src]="'assets/img/product/' + product.id + product.name + '/' + imageName" [alt]= imageName (click)="changeBigImage('assets/img/product/' + product.id + product.name + '/' + imageName)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-5 p-b-30" *ngIf="product">
+        <div class="p-r-50 p-t-5 p-lr-0-lg"><br><br>
+          <h4 class="mtext-105 cl2 js-name-detail p-b-14">
+            {{ product.name }}
+            
+            <span *ngIf="isLoggedIn()" class="favorite-icon" [class.favorite-icon-red]="isFavorite" (click)="addToFavorites(product)">
+              <mat-icon>{{ isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+            </span>
+
+          </h4>
+
+
+
+          <span class="mtext-106 cl2" >
+            <span [ngClass]="{'strike-pink': product.promotion !== 0}">
+              {{ product.price }} DT
+          </span>
+					</span>
+          <div *ngIf="product && product.promotion !== 0" class="stext-102 cl3 p-t-23">
+            On discount
+            <br>
+            {{product.promotion}}% OFF
+            <br>
+            <span class="mtext-106 cl2">
+              New Price:
+              {{ (product.price - (product.price * (product.promotion / 100))) | number: '1.2-2' }} DT
+            </span>
+          </div>
+          <div class="p-t-33">
+            <div class="mtext-106 cl2">
+              Sizes
+            </div>
+            <div class="btn-group ms-auto" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn custom-btn dropdown-toggle dropdown-left" style="width: 10.5cm;" data-bs-toggle="dropdown" aria-expanded="false" [class]="selectedOption ? 'selected-option' : 'custom-btn'">
+                        {{ selectedOption || 'Choose a size' }}
+                    </button>
+                    <ul class="dropdown-menu text-center">
+                        <li *ngFor="let size of sizes">
+                            <a class="dropdown-item" style="width: 10.5cm;" (click)="selectOption(size)">{{ size }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-w flex-r-m p-b-10">
+              <div class="size-204 flex-w flex-m respon6-next">
+                <div class="wrap-num-product flex-w m-r-20 m-tb-10">
+                  <button class="btn btn-num-product-down" (click)="decreaseQuantity()">
+                      <i class="fa fa-minus"></i>
+                  </button>
+                  <input class="num-product" type="number" [(ngModel)]="quantity" min="1" [max]="maxQuantity">
+                  <button class="btn btn-num-product-up" (click)="increaseQuantity()">
+                      <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" (click)="ajouterAuPanier()" (click)="toggleAddToCartPopup()">
+                  Add to cart
+                </button>
+
+
+
+              </div>
+        </div>
+        <div class="row" style="margin-top: 160px; margin-right: 50px; margin-left: 50px;">
+          <p>Similar Products:</p>
+          <div class="product-item col-lg-6 col-md-6 col-sm-12" *ngFor="let product of similarProducts" >
+            <div class="pi-pic">
+                  <img class="product-image" [src]="'assets/img/product/' + product.id + product.name+'/'+product.image_name[0]" alt="{{ product.name }}">
+                  <button class="quick-view-btn" (click)="quickView(product.id)">Quick View</button>
+              </div>
+          </div>
+      </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</section>

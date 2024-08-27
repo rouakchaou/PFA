@@ -1,0 +1,11 @@
+<div class="checkout-popup">
+  <div class="popup-content">
+    <p *ngIf="!isLoggedIn" class="not-logged-in-message">
+      <i class="fas fa-exclamation-circle"></i> <strong>You aren't logged in!</strong>
+    </p>
+    <div *ngIf="!isLoggedIn" class="buttons-container">
+      <button class="close-button" (click)="closePopup()">Close</button>
+      <button class="login-button" (click)="closeAndRedirectToLogin()">Log in</button>
+    </div>
+  </div>
+</div>

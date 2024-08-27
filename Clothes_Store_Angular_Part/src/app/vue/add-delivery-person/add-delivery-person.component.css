@@ -1,0 +1,60 @@
+form {
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border: 1px solid #6c757d !important;
+    padding: 20px; /* Ajout du padding à l'intérieur de la bordure */
+    border-radius: 10px; /* Ajout d'un arrondi aux coins */
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select,
+  input[type="file"] {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  button[type="submit"] {
+    width: 50%;
+    padding: 15px;
+    background-color: #B97989;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  div > div {
+    margin-left: 0;
+  }
+  
+  input[type="number"][disabled] {
+    display: none;
+  }
+  
+  option {
+    padding: 5px;
+  }
+  
+  /* Style pour les messages d'erreur */
+  .ng-invalid {
+    border-color: #B97989; /* Couleur de la bordure rouge pour les éléments invalides */
+  }
+  
+  /* Style pour les messages de validation */
+  .ng-valid {
+    border-color: green; /* Couleur de la bordure verte pour les éléments valides */
+  }
+  

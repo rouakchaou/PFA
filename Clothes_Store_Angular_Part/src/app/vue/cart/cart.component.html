@@ -1,0 +1,75 @@
+<div>
+  <app-header></app-header>
+  <body>
+    <section>
+      <h1 id="cart">Cart</h1>
+      <div class="row">
+        <div class="column">
+          <h2>Your Order</h2>
+          <table style="width: 100%;">
+            <thead style="text-align: center;">
+              <tr>
+                <th style="width: 16.67%;"></th>
+                <th style="width: 16.67%;">Product</th>
+                <th style="width: 16.67%;">Size</th>
+                <th style="width: 16.67%;">Quantity</th>
+                <th style="width: 16.67%;">Actions</th>
+                <th style="width: 16.67%;">Price</th>
+                <th style="width: 16.67%;"></th>
+              </tr>
+              <tr>
+                <th colspan="2"></th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center;">
+              <tr *ngFor="let product of cartProducts">
+                <td><img [src]="'assets/img/product/' + product.id + product.name+'/'+product.image_name[0]" alt="{{ product.name }}" /></td>
+                <td>{{ product.name }}</td>
+                <td>
+                  <ng-container *ngIf="cart.get(product)">
+                    <div *ngFor="let sizeAndQty of cart.get(product) | keyvalue" class="size">
+                      {{ sizeAndQty.key }}
+                    </div>
+                  </ng-container>
+                </td>
+                <td>
+                  <ng-container *ngIf="cart.get(product)">
+                    <div *ngFor="let sizeAndQty of cart.get(product) | keyvalue">
+                      <input type="number" name="quantity" id="no-of-items" [value]="sizeAndQty.value" min="1" [max]="getMaxQuantity(product, sizeAndQty.key)" step="1" class="quantity"  (input)="handleInput($event, product, sizeAndQty.key)">
+                    </div>
+                  </ng-container>
+                </td>
+                <td>
+                  <ng-container *ngIf="cart.get(product)">
+                    <div *ngFor="let sizeAndQty of cart.get(product) | keyvalue">
+                      <button id="remove" class="remove-button" (click)="removeSizeQuantity(product, sizeAndQty.key)">
+                        <mat-icon class="delete-icon">delete</mat-icon>
+                      </button>
+
+                    </div>
+                  </ng-container>
+                </td>
+                <td>{{ calculateProductPrice(product) }} DT</td>
+              </tr>
+            </tbody>
+          </table>
+        <hr />
+        </div>
+        <div class="column2">
+          <h2>Cart Totals</h2>
+<!--          <h4>Subtotals Shipping &nbsp; &nbsp; {{calculateTotalPrice()}} DT</h4>-->
+<!--          <div class="input-container">-->
+<!--            <input type="text" name="promocode" id="promocode" class="promocode" placeholder="Enter promo code" />-->
+<!--          </div>-->
+          <h4>Totals &nbsp; &nbsp; {{ calculateFinalPrice() }} DT</h4>
+          <div class="buttons">
+            <a class="button-checkout" (click)="toggleCheckout()" >Checkout</a>
+            <a class="cancel" routerLink="/home">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <app-footer></app-footer>
+</div>

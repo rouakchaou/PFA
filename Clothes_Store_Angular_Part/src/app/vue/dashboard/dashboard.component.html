@@ -1,0 +1,29 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header-dash (toggleSidebarForMe)="sideBarToggler()"></app-header-dash>
+
+    <app-add-delivery-person *ngIf="afficherFormulaireLivreur"></app-add-delivery-person>    
+    
+    <app-ajout-produit *ngIf="afficherFormulaireProduit"></app-ajout-produit>
+    
+    <app-add-category *ngIf="afficherFormulaireCategorie"></app-add-category>
+
+    <app-add-sous-category *ngIf="afficherFormulaireSousCategorie"></app-add-sous-category>
+  
+    <app-viewproducts *ngIf=" afficherFormulaireproducts"></app-viewproducts>
+
+    <app-edit-product *ngIf=" afficherFormulaireEdit"></app-edit-product>
+
+    <app-subcategories *ngIf=" afficherFormulairesubcategories"></app-subcategories>
+
+    <app-viewcategories *ngIf="afficherFormulaireCategories"></app-viewcategories>
+
+    <app-viewcommandes *ngIf="affichercommandes"></app-viewcommandes>
+
+    <app-dash-page *ngIf="afficherdash"></app-dash-page>
+    
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,79 @@
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  ul {
+    li {
+      list-style: none;
+    }
+  }
+  button {
+    outline: none;
+    border: 0;
+    background: transparent;
+  }
+  .user {
+    font-size: 14px;
+  }
+  mat-toolbar {
+    background: #f7f7f7;
+  }
+  .user-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    &-icon {
+      height: 18px;
+      font-size: 16px;
+    }
+  }
+  
+  ::ng-deep {
+    .mat-menu-content {
+      width: 160px;
+    }
+  }
+  
+  .logout-menu {
+      /* Ajoutez vos styles ici */
+      position: absolute;
+      top: calc(100% + 5px); /* positionne le menu juste en dessous du bouton déclencheur */
+      left: 0;
+      z-index: 101; /* assure que le menu s'affiche au-dessus des autres éléments */
+    }
+    .custom-search-bar {
+      background-color: #f8f9fa; /* Couleur de fond */
+      border-radius: 5px; /* Rayon des coins */
+      padding: 5px; /* Espacement intérieur */
+      margin-left: 700px; /* Espacement vers la droite */
+    }
+    
+    
+    .custom-search-bar .form-control {
+      border: none; /* Supprimer la bordure */
+      border-radius: 5px; /* Rayon des coins */
+      box-shadow: none; /* Supprimer l'ombre */
+    }
+    
+    .custom-search-bar .input-group-text {
+      background-color: transparent; /* Couleur de fond */
+      border: none; /* Supprimer la bordure */
+    }
+    
+    .custom-search-bar .input-group-text mat-icon {
+      color: #333; /* Couleur de l'icône */
+    }
+
+.mat-elevation-z8 {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.custom-css-class {
+    background: none;
+    border: 2px solid var(--Pink);
+    border-radius: 10px;
+    color: var(--Pink);
+}

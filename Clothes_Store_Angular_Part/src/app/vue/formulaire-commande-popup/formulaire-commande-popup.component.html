@@ -1,0 +1,47 @@
+<div id="container">
+  <div id="Order_Form">
+    <form id="orderForm" (ngSubmit)="onSubmit()" [formGroup]="orderForm">
+      <h1>ORDER FORM</h1>
+      <label for="firstName">FIRST NAME</label>
+      <div>
+        <input type="text" id="firstName" formControlName="firstName" class="input-style small" required readonly>
+      </div>
+      <label for="lastName">LAST NAME</label>
+      <div>
+        <input type="text" id="lastName" formControlName="lastName" class="input-style small" required readonly>
+      </div>
+      <label for="phoneNumber">PHONE NUMBER</label>
+      <div>
+        <input type="tel" id="phoneNumber" formControlName="phoneNumber" class="input-style small" pattern="[0-9]{8}" required >
+      </div>
+      <label for="Town">Town</label>
+      <div>
+        <select id="town" formControlName="town" class="input-style small" required>
+          <option value="" selected disabled hidden style="color: #888;">Choose your town</option>
+          <option value="Monastir">Monastir</option>
+          <option value="Tunis">Tunis</option>
+          <option value="Sfax">Sfax</option>
+          <option value="Sousse">Sousse</option>
+        </select>
+        <div *ngIf="orderForm.get('paymentType')?.invalid && orderForm.get('paymentType')?.touched">
+          <span *ngIf="orderForm.get('paymentType')?.errors?.['required']">Payment Type is required</span>
+        </div>
+      </div>
+      <label for="address">ADDRESS</label>
+      <div>
+        <input type="text" id="address" formControlName="address" class="input-style small" required>
+        <div *ngIf="orderForm.get('address')?.invalid && orderForm.get('address')?.touched">
+          <span *ngIf="orderForm.get('address')?.errors?.['required']">Address is required</span>
+        </div>
+      </div>
+      <label for="postalCode">POSTAL CODE</label>
+      <div>
+        <input type="text" id="postalCode" formControlName="postalCode" class="input-style small" required>
+        <div *ngIf="orderForm.get('postalCode')?.invalid && orderForm.get('postalCode')?.touched">
+          <span *ngIf="orderForm.get('postalCode')?.errors?.['required']">Postal Code is required</span>
+        </div>
+      </div>
+      <button type="submit" [disabled]="orderForm.invalid" class="submit-btn small"  >SUBMIT</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header id="head">
+       
+  </header>
+    <div id="Customer">
+      <form id="Create_Account"  #Registration="ngForm" [formGroup]="userForm" (ngSubmit)="registerUser()">  
+        <h1 id="Account">CREATE ACCOUNT</h1>
+        <label for="FirstName">FIRST NAME</label>
+        <div>
+          <input type="text" id="FirstName" formControlName="name">
+          <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+            <span *ngIf="userForm.get('name')?.errors?.['required']" >First Name is required</span>
+          </div>
+        </div>
+        <label for="LastName">LAST NAME</label>
+        <div>
+          <input type="text" id="LastName" formControlName="surname">
+          <div *ngIf="userForm.get('surname')?.invalid && userForm.get('surname')?.touched">
+            <span *ngIf="userForm.get('surname')?.errors?.['required']">Last Name is required</span>
+          </div>
+        </div>
+        <label for="PhoneNumber">PHONE NUMBER</label>
+        <div>
+          <input type="tel" id="PhoneNumber" formControlName="phoneNumber">
+          <div *ngIf="userForm.get('phoneNumber')?.invalid && userForm.get('phoneNumber')?.touched">
+            <span *ngIf="userForm.get('phoneNumber')?.errors?.['required']">Phone Number is required</span>
+            <span *ngIf="userForm.get('phoneNumber')?.errors?.['pattern']">Phone Number must be 8 digits</span>
+          </div>
+        </div>
+        <label for="Email">EMAIL</label>
+        <div>
+          <input type="email" id="Email" formControlName="emailId">
+          <div *ngIf="userForm.get('emailId')?.invalid && userForm.get('emailId')?.touched">
+            <span *ngIf="userForm.get('emailId')?.errors?.['required']">Email is required</span>
+            <span *ngIf="userForm.get('emailId')?.errors?.['pattern']">Invalid email format</span>
+          </div>
+        </div>
+        <label for="Password">PASSWORD</label>
+        <div>
+          <input type="password" id="Password" formControlName="password">
+          <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+            <span *ngIf="userForm.get('password')?.errors?.['required']">Password is required</span>
+            <span *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</span>
+          </div>
+        </div>
+        <label for="Gender">GENDER</label>
+        <div>
+          <input class="no-style" type="radio" id="male" name="gender" value="male" formControlName="gender">
+          <label class="no-style" for="male">Male</label>
+        </div>
+        <div>
+          <input class="no-style" type="radio" id="female" name="gender" value="female" formControlName="gender">
+          <label class="no-style" for="female">Female</label>
+        </div>
+        <div *ngIf="msg.message">
+          <p *ngFor="let line of msg.message.split('\n')">{{ line }}</p>
+        </div>
+        <input type="submit" value="CREATE" id="Submit">
+        <p id="Login">
+          <a routerLink="/login" style="text-decoration: none;color: var(--darkBlue);">Already registered? Click to Login!</a>
+        </p>
+      </form>  
+    </div> 
+    <hr>
+</body>
+</html>
+
+

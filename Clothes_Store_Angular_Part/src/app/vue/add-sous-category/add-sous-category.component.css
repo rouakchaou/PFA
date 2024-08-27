@@ -1,0 +1,31 @@
+#addsous_category {
+  max-width: 400px;
+  margin: auto;
+  border: 2px solid #6c757d; /* Ajout de la bordure */
+  padding: 20px; /* Ajout du padding à l'intérieur de la bordure */
+  border-radius: 10px; /* Ajout d'un arrondi aux coins */
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button.CREATE {
+  background-color: var(--Pink);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+}
+
+button.CREATE:hover {
+  background-color: var(--Pink);
+}

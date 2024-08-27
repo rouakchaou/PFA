@@ -1,0 +1,131 @@
+/* Style pour le header du panneau */
+.panel-header {
+    background-color: var(--Grey);
+    padding: 10px;
+  }
+  
+  /* Style pour le contenu principal */
+  .main-content {
+    padding: 20px;
+  }
+  
+  /* Style pour les cartes */
+  .card {
+    /* margin-bottom: 20px; */
+    width: 560px;
+  }
+  
+  /* Style pour les images dans les cartes */
+  .card .image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style pour les auteurs dans les cartes */
+  .card .author {
+    text-align: center;
+  }
+  
+  /* Style pour les boutons dans les cartes */
+  .card .button-container {
+    text-align: center;
+  }
+  
+  /* Style pour les boutons d'action */
+  .btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style pour les boutons d'action neutres */
+  .btn-neutral {
+    color: #333;
+    background-color: #e0e0e0;
+  }
+  
+  /* Style pour les icônes dans les boutons */
+  .btn i {
+    margin-right: 5px;
+  }
+  
+  /* Style pour les descriptions */
+  .description {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Style pour les liens */
+  a {
+    text-decoration: none;
+    color: #337ab7;
+  }
+  
+  /* Style pour les titres */
+  .title {
+    font-family: var(--font-h1);
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--Pink);
+  }
+  
+  /* Style pour les inputs */
+  .form-control {
+    margin-bottom: 10px;
+  }
+
+  .user-details label{
+    color: var(--Blue);
+    font-size: 18px;
+    font-family: var(--font-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 25px;
+  }
+
+  .user-details p {
+    color: var(--darkBlue);
+    font-size: 20px;
+    font-family: var(--font-label);
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+
+  #edit-profile{
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: var(--font-label);
+    letter-spacing: 0.4px;
+    font-weight: 100;
+  }
+  #edit-profile:hover {
+    text-decoration: underline;
+    color: var(--Pink);
+  }
+
+  #Submit{
+    display: block; 
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    background-color: var(--Blue)  ;
+    color: white;
+  }
+
+  input:focus.has-error {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.351); 
+    border: 1px solid white;
+  }
+
+  input:focus.has-success {
+    box-shadow: 0 0 5px rgba(119, 201, 119, 0.54);
+    border: 1px solid white;
+  }

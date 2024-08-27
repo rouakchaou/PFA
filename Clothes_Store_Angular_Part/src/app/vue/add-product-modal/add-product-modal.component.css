@@ -1,0 +1,20 @@
+.modal-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  }
+
+  .close-button {
+    background-color: #B97989 !important;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .close-button:hover {
+    background-color: #d7a7b2 !important;
+  }

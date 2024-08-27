@@ -1,0 +1,149 @@
+body, html {
+    margin: 200px 50px 50px 50px;
+    font-family: var(--font-label);
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+    margin: 200px 0 0 35px;
+    font-family: var(--font-h1);
+    font-weight: bold;
+    color: var(--Blue) ;
+    width: 33%;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+h2{
+    font-size: 34px;
+    font-family: var(--font-h1);
+    font-weight: bold;
+    color: var(--Pink) ;
+    margin-top: 40px;
+}
+
+h4{
+    font-size: 26px;
+    font-family: var(--font-h1);
+    font-weight: normal;
+    color: var(--darkBlue) ;
+    margin-top: 10px;
+}
+
+.row {
+    display: flex;
+    margin: 0 60px 0 60px;
+}
+
+.row>.column {
+    width: 70%
+}
+
+.row>.column2 {
+    width: 30%
+}
+
+.cart-item {
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+img {
+    max-width: 100%;
+}
+
+.quantity{
+    font-weight: bold;
+    text-align: center;
+    background: var(--Pink);
+    color: white;
+    font-size: 20px;
+    height: 25px;
+    margin: 16px 0;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30%;
+}
+
+.input-container {
+    margin: 20px 10px 20px 10px;
+}
+
+.promocode{
+    text-align: center;
+    background: transparent;
+    border: 1px solid var(--Pink);
+    color: var(--Pink);
+    border-radius: 16px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons>a {
+    text-decoration: none;
+}
+
+.button-checkout {
+    border: 1px solid var(--Pink);
+    background-color: var(--Pink);
+    text-align: center;
+    color: white;
+    border-radius: 16px;
+    padding: 10px 0 10px 0;
+    margin: 20px 10px 10px 10px;
+}
+
+.button-checkout:hover {
+    color: var(--Pink);
+    background-color: white;
+}
+
+.cancel {
+    color: var(--Blue);
+    text-align: right;
+    margin-right: 10px;
+}
+.size{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.remove {
+    background: none;
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.remove:hover {
+    color: var(--Blue);
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: #B97989;
+  font-size: 27px;
+}
+

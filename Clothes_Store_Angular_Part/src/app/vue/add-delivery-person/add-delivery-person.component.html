@@ -1,0 +1,53 @@
+<form  enctype="multipart/form-data" id="Create_DeliveryAccount"  #Registration="ngForm" [formGroup]="deliveryPersonForm" (ngSubmit)="registerDeliveryPerson()">
+    <div>
+      <label>First Name</label>
+      <input type="text" id="FirstName" formControlName="name">
+      <div *ngIf="deliveryPersonForm.get('name')?.invalid && deliveryPersonForm.get('name')?.touched">
+        <span *ngIf="deliveryPersonForm.get('name')?.errors?.['required']" >First Name is required</span>
+      </div>
+    </div>
+    <div>
+      <label>LAST NAME</label>
+      <input type="text" id="LastName" formControlName="surname">
+      <div *ngIf="deliveryPersonForm.get('surname')?.invalid && deliveryPersonForm.get('surname')?.touched">
+        <span *ngIf="deliveryPersonForm.get('surname')?.errors?.['required']">Last Name is required</span>
+      </div>
+    </div>
+    <div>
+      <label>Phone Number</label>
+      <input type="number" id="PhoneNumber" formControlName="phoneNumber">
+      <div *ngIf="deliveryPersonForm.get('phoneNumber')?.invalid && deliveryPersonForm.get('phoneNumber')?.touched">
+        <span *ngIf="deliveryPersonForm.get('phoneNumber')?.errors?.['required']">Phone Number is required</span>
+        <span *ngIf="deliveryPersonForm.get('phoneNumber')?.errors?.['pattern']">Phone Number must be 8 digits</span>
+      </div>
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="email" id="Email" formControlName="emailId">
+      <div *ngIf="deliveryPersonForm.get('emailId')?.invalid && deliveryPersonForm.get('emailId')?.touched">
+        <span *ngIf="deliveryPersonForm.get('emailId')?.errors?.['required']">Email is required</span>
+        <span *ngIf="deliveryPersonForm.get('emailId')?.errors?.['pattern']">Invalid email format</span>
+      </div>
+    </div>
+    <div>
+      <label>Town</label>
+      <select id="town" formControlName="town" >
+        <option value="" selected disabled hidden style="color: #888;">Choose your town</option>
+        <option value="Monastir">Monastir</option>
+        <option value="Tunis">Tunis</option>
+        <option value="Sfax">Sfax</option>
+        <option value="Sousse">Sousse</option>
+      </select>
+      <div *ngIf="deliveryPersonForm.get('town')?.invalid && deliveryPersonForm.get('town')?.touched">
+        <span *ngIf="deliveryPersonForm.get('tow')?.errors?.['required']">Town is required</span>
+      </div>
+    </div>
+    <div *ngIf="msg.message">
+      <p *ngFor="let line of msg.message.split('\n')">{{ line }}</p>
+    </div>
+    <button type="submit" (click)="toggleAddDeliveryPersonPopup()" >Add new delivery person</button>
+</form>
+
+
+<!-- <class="input-style small" required> -->
+

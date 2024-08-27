@@ -1,0 +1,11 @@
+.mat-elevation-z8 {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.custom-css-class {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    color: var(--Pink);
+}

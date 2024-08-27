@@ -1,0 +1,57 @@
+.checkout-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(185, 121, 137);
+  width: 400px;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.not-logged-in-message {
+  margin-bottom: 60px;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Centrer les boutons */
+  margin-top: 20px;
+}
+
+.close-button, .login-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
+}
+
+.close-button {
+  background-color: #B97989;
+}
+
+.login-button {
+  background-color: #4C90A6;
+  margin-left: 1cm;
+}
+
+.close-button:hover {
+  background-color: #e1b8c3;
+}
+
+.login-button:hover {
+  background-color: #A3CEF1;
+}
+

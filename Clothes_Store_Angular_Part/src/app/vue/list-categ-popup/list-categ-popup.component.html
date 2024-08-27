@@ -1,0 +1,3 @@
+<ul [ngClass]="{'list-group': true, 'list-group-flush': subCategory.length > 0}" class="list-group-flush">
+  <li class="list-group-item" *ngFor="let subCategory of subCategory" [ngClass]="{'selected': isCategorySelected(subCategory.name)}" (click)="selectCategory(subCategory.id)">{{ subCategory.name }}</li>
+</ul>

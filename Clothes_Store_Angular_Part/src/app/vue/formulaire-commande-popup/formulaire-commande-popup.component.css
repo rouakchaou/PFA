@@ -1,0 +1,112 @@
+:root {
+  --Blue: blue;
+  --Grey: #4c90a6;
+  --font-h1: Arial, sans-serif;
+  --font-label: Arial, sans-serif;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrer verticalement */
+  /*height: 100vh; !* Utilise toute la hauteur de la fenêtre *!*/
+  margin-top: 35px;
+}
+
+#Order_Form {
+  width: 740px; /* Largeur de la popup */
+  height: 640px; /* Hauteur de la popup */
+  padding: 20px;
+  background-color: #f9f9f9; /* Ajouter une couleur de fond pour le formulaire */
+  border: 1px solid #ddd; /* Ajouter une bordure au formulaire */
+  border-radius: 5px; /* Ajouter des coins arrondis */
+}
+
+#Order_Form h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-left: -5px;
+  font-family: var(--font-h1);
+  font-weight: normal;
+}
+
+#orderForm {
+  color: var(--Blue);
+}
+
+#orderForm label:not(.no-style) {
+  color: var(--darkBlue);
+  font-size: 14px;
+  font-family: var(--font-label);
+  font-weight: bold;
+}
+
+#orderForm label.no-style {
+  color: var(--darkBlue);
+  font-size: 14px;
+  font-family: var(--font-label);
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.input-style {
+  width: calc(100% - 10px); /* Largeur du champ de saisie, en prenant en compte la marge */
+  height: 36px;
+  margin: 5px 0px;
+  border: 1px solid var(--Grey);
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: calc(100% - 10px); /* Largeur du bouton de soumission, en prenant en compte la marge */
+  height: 43px;
+  margin: 5px 0px 20px;
+  background-color: var(--Blue);
+  color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: var(--darkBlue);
+}
+
+#orderForm select {
+  width: calc(100% - 10px);
+  height: 36px;
+  margin: 5px 0px;
+  border: 1px solid var(--Blue);
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 14px;
+  font-family: var(--font-label);
+}
+
+/* Style pour le champ de sélection lorsqu'il est en état de survol */
+#orderForm select option:hover {
+  background-color: #4C90A6;
+  color: white;
+}
+
+/* Style pour le champ de sélection lorsqu'il est en focus */
+#orderForm select:focus {
+  outline: none;
+  border-color: var(--Blue);
+}
+
+/* Style pour les options du champ de sélection */
+#orderForm select option {
+  background-color: white;
+  color: var(--Blue);
+
+}
+#orderForm select option[value="cheque"] {
+  padding-right: 30px; /* Ajouter un espacement supplémentaire à droite */
+}
+
+#orderForm select option[value="espece"] {
+  padding-left: 30px; /* Ajouter un espacement supplémentaire à gauche */
+}
+
+

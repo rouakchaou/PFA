@@ -1,0 +1,76 @@
+<form (ngSubmit)="onSubmit(produitform)" enctype="multipart/form-data" #produitform="ngForm">
+  <div>
+    <label>Name:</label>
+    <input type="text" name="name" [(ngModel)]="product.name" required>
+  </div>
+  <div>
+    <label>Price:</label>
+    <input type="number" name="price" [(ngModel)]="product.price" required>
+  </div>
+  <div>
+    <label>Promotion:</label>
+    <input type="number" name="promotion" [(ngModel)]="product.promotion" required>
+  </div>
+  <div>
+    <label>Subcategory:</label>
+    <select name="scategory_id" [(ngModel)]="product.scategory_id" (change)="onSubcategorySelected($event)" required>
+      <option *ngFor="let subcategory of subcategories" [value]="subcategory.id">{{ subcategory.name }}</option>
+    </select>
+  </div>
+  <div>
+    <label>Category:</label>
+    <select name="fcategory_id" [(ngModel)]="product.fcategory_id" (change)="onCategorySelected($event)" required>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+  </div>
+  <div *ngIf="product.fcategory_id === '1' || product.fcategory_id === '2' ">
+    <label>Tailles:</label>
+    <div>
+      <label><input type="checkbox" name="sizeS" [(ngModel)]="product.sizeS" (change)="onSizeChecked('S')"> S</label>
+      <input type="number" name="quantityS" [(ngModel)]="product.quantityS" [disabled]="!product.sizeS">
+      <label><input type="checkbox" name="sizeM" [(ngModel)]="product.sizeM" (change)="onSizeChecked('M')"> M</label>
+      <input type="number" name="quantityM" [(ngModel)]="product.quantityM" [disabled]="!product.sizeM">
+      <label><input type="checkbox" name="sizeL" [(ngModel)]="product.sizeL" (change)="onSizeChecked('L')"> L</label>
+      <input type="number" name="quantityL" [(ngModel)]="product.quantityL" [disabled]="!product.sizeL">
+      <label><input type="checkbox" name="sizeXL" [(ngModel)]="product.sizeXL" (change)="onSizeChecked('XL')"> XL</label>
+      <input type="number" name="quantityXL" [(ngModel)]="product.quantityXL" [disabled]="!product.sizeXL">
+    </div>
+  </div>
+  <div *ngIf="product.fcategory_id === '3' || product.fcategory_id === '4'">
+    <label>Tailles:</label>
+    <div>
+      <label><input type="checkbox" name="size4a" [(ngModel)]="product.size4a" (change)="onSizeChecked('4a')"> 4A</label>
+      <input type="number" name="quantity4a" [(ngModel)]="product.quantity4a" [disabled]="!product.size4a">
+      <label><input type="checkbox" name="size6a" [(ngModel)]="product.size6a" (change)="onSizeChecked('6a')"> 6A</label>
+      <input type="number" name="quantity6a" [(ngModel)]="product.quantity6a" [disabled]="!product.size6a">
+      <label><input type="checkbox" name="size8a" [(ngModel)]="product.size8a" (change)="onSizeChecked('8a')"> 8A</label>
+      <input type="number" name="quantity8a" [(ngModel)]="product.quantity8a" [disabled]="!product.size8a">
+      <label><input type="checkbox" name="size10a" [(ngModel)]="product.size10a" (change)="onSizeChecked('10a')"> 10A</label>
+      <input type="number" name="quantity10a" [(ngModel)]="product.quantity10a" [disabled]="!product.size10a">
+      <label><input type="checkbox" name="size12a" [(ngModel)]="product.size12a" (change)="onSizeChecked('12a')"> 12A</label>
+      <input type="number" name="quantity12a" [(ngModel)]="product.quantity12a" [disabled]="!product.size12a">
+    </div>
+  </div>
+  <div *ngIf="product.fcategory_id === '5' || product.fcategory_id === '6'">
+    <label>Tailles:</label>
+    <div>
+      <label><input type="checkbox" name="size3m" [(ngModel)]="product.size3m" (change)="onSizeChecked('3m')">3M</label>
+      <input type="number" name="quantity3m" [(ngModel)]="product.quantity3m" [disabled]="!product.size3m">
+      <label><input type="checkbox" name="size6m" [(ngModel)]="product.size6m" (change)="onSizeChecked('6m')">6M</label>
+      <input type="number" name="quantity6m" [(ngModel)]="product.quantity6m" [disabled]="!product.size6m">
+      <label><input type="checkbox" name="size9m" [(ngModel)]="product.size9m" (change)="onSizeChecked('9m')">9M</label>
+      <input type="number" name="quantity9m" [(ngModel)]="product.quantity9m" [disabled]="!product.size9m">
+      <label><input type="checkbox" name="size12m" [(ngModel)]="product.size12m" (change)="onSizeChecked('12m')">12M</label>
+      <input type="number" name="quantity12m" [(ngModel)]="product.quantity12m" [disabled]="!product.size12m">
+      <label><input type="checkbox" name="size18m" [(ngModel)]="product.size18m" (change)="onSizeChecked('18m')">18M</label>
+      <input type="number" name="quantity18m" [(ngModel)]="product.quantity18m" [disabled]="!product.size18m">
+      <label><input type="checkbox" name="size24m" [(ngModel)]="product.size24m" (change)="onSizeChecked('24m')">24M</label>
+      <input type="number" name="quantity24m" [(ngModel)]="product.quantity24m" [disabled]="!product.size24m">
+    </div>
+  </div>
+  <div>
+    <label>Image:</label>
+    <input type="file" name="images" (change)="handleFileInput($event)" multiple required>
+  </div>
+  <button type="submit">Submit</button>
+</form>

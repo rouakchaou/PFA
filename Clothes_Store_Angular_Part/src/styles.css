@@ -1,0 +1,20 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+:root {
+    --font-h1: Tiemann, serif;
+    --font-label:Futura,sans-serif;
+    --darkBlue: #0E4A6C;
+    --Blue: #4C90A6;
+    --skyBlue: #A3CEF1;
+    --Grey:#E7ECEF;
+    --Pink:#B97989;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+

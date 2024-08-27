@@ -1,0 +1,103 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div *ngIf="edit; else showUserDetails" class="card">
+        <div class="card-header">
+          <h5 class="title">Edit Profile</h5>
+        </div>
+        <div class="card-body">
+          <form id="Update-User" #Update="ngForm" [formGroup]="editUserForm" (ngSubmit)="editUser()">
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" placeholder="First Name" formControlName="name">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last Name" formControlName="surname">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="text" class="form-control" placeholder="Email Address" formControlName="emailId">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="text" class="form-control" placeholder="Phone Number" formControlName="phoneNumber">
+                </div>
+              </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label class="d-block">Gender:</label>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" [checked]="user.gender === 'male'" formControlName="gender">
+                      <label class="form-check-label" for="genderMale">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" [checked]="user.gender === 'female'" formControlName="gender">
+                      <label class="form-check-label" for="genderFemale">Female</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Current Password</label>
+                  <input id="currentPasswordInput" type="password" class="form-control" (input)="showNewPasswordInput()" placeholder="Current Password" [ngClass]="{'has-error': !passworIsTrue, 'has-success': passworIsTrue}">
+                </div>
+                <div *ngIf="passworIsTrue" class="form-group">
+                  <label>New Password</label>
+                  <input type="password" class="form-control" placeholder="New Password" formControlName="password">
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="EDIT"  id="Submit">
+          </form>
+        </div>
+      </div>
+      <ng-template #showUserDetails >
+        <div class="card" *ngIf="user">
+          <div class="card-header">
+            <h5 class="title">Profile</h5>
+          </div>
+          <div class="card-body">
+                <div class="user-details">
+                  <label>First Name:</label>
+                  <p>{{user.name}}</p>
+                </div>
+                <div class="user-details">
+                  <label>Last Name:</label>
+                  <p>{{user.surname}}</p>
+                </div>
+                <div class="user-details">
+                  <label>Email Address:</label>
+                  <p>{{user.emailId}}</p>
+                </div>
+                <div class="user-details">
+                  <label>Gender:</label>
+                  <p>{{user.gender}}</p>
+                </div>
+                <div class="user-details">
+                  <label>Phone Number:</label>
+                  <p>{{user.phoneNumber}}</p>
+                </div>
+                <p id="edit-profile">
+                  <a  (click)="showEditProfile()" style="text-decoration: none;color: var(--Pink);">Edit Profile</a>
+                </p>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

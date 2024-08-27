@@ -1,0 +1,70 @@
+.no-favorites-message {
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #4C90A6;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .spacer {
+    height: 50px;
+  }
+
+  .favorites-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .favorites-table th, .favorites-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .favorites-table th {
+    background-color: #f2f2f2;
+  }
+
+  .favorites-table td img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.pink-icon {
+  color:#B97989;
+  font-size: 26px;
+}
+
+.no-border {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.pink-icon {
+  color:#B97989;
+  font-size: 26px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  margin-right: 0.5cm;
+  margin-left: 0.5cm;
+}
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="" />
+  <title>Document</title>
+</head>
+<body>
+  <header id="head">      
+  </header>
+  <div id="Customer_Account">
+    <form id="Log_in" #loginform="ngForm" >
+      <h1 id="Login_Account">SIGN IN</h1>
+        <label for="Email">EMAIL</label>
+        <div>
+          <input type="text" id="Email" name="emailId" [(ngModel)]="emailId">
+        </div>
+        <label for="Password">PASSWORD</label>
+        <div>
+          <input type="password" id="Password" name="password" [(ngModel)]="password">
+        </div>
+        <div *ngIf="msg"><p *ngFor="let line of msg.split('\n')">{{ line }}</p></div> 
+        <div class="buttons-container">
+          <button type="button" class="login-button" (click)="loginUser()">User</button>
+          <button type="button" class="login-button" (click)="loginAdmin()">Admin</button>
+          <button type="button" class="login-button" (click)="loginDeliveryPerson()">Delivery Person</button>
+        </div>
+        <p id="Signup">
+          <a routerLink="/signup" style="text-decoration: none;color: var(--darkBlue);">New user? Create account!</a>
+        </p>         
+    </form>
+  </div>
+  <hr> 
+</body>
+</html>

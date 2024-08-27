@@ -1,0 +1,104 @@
+<div>
+<app-header (categorySelected)="onCategorySelected($event)"></app-header><br><br><br><br>
+<div *ngIf="displayImages" class="content-wrapper">
+  <img [src]="images[currentIndex]" class="content-image">
+  <div class="content-text">
+    {{ currentIndex === 0 ? 'Men Collection 2024' : 'Women Collection 2024' }}
+  </div>
+  <div class="content-subtext">
+    {{ currentIndex === 0 ? 'New Arrivals' : 'New Season' }}
+  </div>
+  <button class="content-button">Shop Now</button>
+ </div>
+</div>
+
+<div *ngIf="displayImages" class="container1">
+  <div class="row1">
+    <div class="col-lg-4 col-sm-4_1">
+      <div class="product-item1" >
+        <div class="pi-pic1">
+          <img src="./assets/img/map.png" alt="">
+          <div class="overlay">
+            <a href="https://www.google.com/maps/place/École+Nationale+d'Ingénieurs+de+Sfax+-+ENIS/@34.7248108,10.7115594,15z/data=!4m14!1m7!3m6!1s0x1301d2d477653b95:0x1cbb74b7ed3b3abc!2sSfax+2000!8m2!3d34.740565!4d10.76018!16s%2Fg%2F1td3byw1!3m5!1s0x13002ca4425ed6a1:0x1cb1842d2707fe25!8m2!3d34.7260819!4d10.7177438!16s%2Fg%2F12151fx1?entry=ttu" target="_blank" class="location">Location</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-4_1">
+      <div class="product-item1" >
+        <div class="pi-pic1">
+          <img src="./assets/img/delivery.png" alt="delivery">
+          <div class="overlay">
+            <p class="shop-now">Ensure swift and secure shipment of your orders with our complimentary shipping service for purchases over 150 DT.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-4_1">
+      <div class="product-item1" >
+        <div class="pi-pic1">
+          <img src="./assets/img/DeliveryReturn.jpg" alt="">
+          <div class="overlay">
+            <p class="shop-now">If there is a sizing issue or any other fault, you have a period of 10 days to return the product.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Product filter section -->
+<section class="product-filter-section">
+  <div class="container">
+    <div class="section-title">
+      <br><br><br><br>
+      <h1>PRODUCT OVERVIEW</h1>
+    </div>
+    <ul class="product-filter-menu">
+      <li><button (click)="getProducts(0)">All Products</button></li>
+      <li *ngFor="let category of categories">
+        <button (click)="toggleSousCategoriesPopup(category.id)">{{ category.name }}</button>
+      </li>
+    </ul><br>
+
+    <div class="row">
+      <div class="col-lg-3 col-sm-6" *ngFor="let product of products">
+        <div class="product-item">
+          <div class="pi-pic">
+            <img class="product-image" [src]="'assets/img/product/' + product.id + product.name+'/'+product.image_name[0]" alt="{{ product.name }}">
+            <button class="quick-view-btn" (click)="toggleProductPopup(product.id)">Quick View</button>
+          </div>
+          <div class="pi-text">
+            <p>{{ product.name }}</p>
+            <p>{{ product.price }}DT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="text-center pt-5">
+      <button class="site-btn sb-line sb-dark">LOAD MORE</button>
+    </div> -->
+  </div>
+</section>
+<!-- Product filter section end -->
+
+<!-- Banner section -->
+<section class="banner-section">
+  <div class="container">
+    <div class="banner set-bg">
+      <img src="./assets/img/bannerbg.png" alt="">
+      <div class="text-overlay">
+        <div>
+          <div class="tag-new">NEW</div>
+          <span>New Arrivals</span>
+          <h1>STRIPED SHIRTS</h1>
+          <!-- <a href="#" class="site-btn">SHOP NOW</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Banner section end  -->
+
+<app-footer></app-footer>

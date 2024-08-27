@@ -1,0 +1,59 @@
+#Customer_Account{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+#Log_in h1{
+    text-align: center;
+    font-size: 40px;
+    margin-left: -5px;
+    font-family: var(--font-h1);
+    font-weight: normal;
+}
+#Log_in{
+    color: var(--Blue) ;
+    width: 33%;
+    padding-left: 10px;
+    justify-content: center;
+}
+#Log_in label{
+    color: var(--darkBlue);
+    font-size: 14px;
+    font-family: var(--font-label);
+    font-weight: bold;
+}
+#Log_in input{
+    width: 95%;
+    height: 44px;
+    margin: 10px 0px 30px;
+    border: 1px solid var(--Grey);
+}
+.buttons-container {
+    margin: 10px 0px 30px;
+    width: 95%;
+    display: flex;
+  }
+#Log_in .login-button{
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 50px;
+    background-color: var(--Blue)  ;
+    color: white;
+    letter-spacing: 5px;
+    border: none;
+}
+#Signup{
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: var(--font-label);
+    letter-spacing: 0.4px;
+    font-weight: 100;
+}
+#Signup:hover {
+    text-decoration: underline;
+    color: var(--darkBlue);
+}
